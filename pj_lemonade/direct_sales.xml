@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	
+    	<template id="lemonade_styles_and_scripts" name="lemonade styles and scripts" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/pj_lemonade/static/src/css/pj_lemonade.css"/>
+            </xpath>
+        </template>
+    	
+    	<!-- Seat Downs Schedule -->
+    	<record id="schedule_seat_down_meeting_request_filter" model="ir.ui.view">
+            <field name="name">schedule.seat.down.meeting.request.search</field>
+            <field name="model">schedule.seat.down.meeting</field>
+            <field name="arch" type="xml">
+                <search string="Search Seatdown Schedule">
+                    <field name="user_id"/>
+                    <field name="request_obs"/>
+                    <field name="confirm_obs"/>
+                    <separator/>
+                    <filter name="new_schedules" domain="[('date_time','&gt;',time.strftime('%Y-%m-%d'))]" help="New Schedules"/>
+               </search>
+            </field>
+        </record>
+    	
+    	<record id="schedule_seat_down_meeting_request_form" model="ir.ui.view">
+            <field name="name">schedule.seat.down.meeting.request.form</field>
+            <field name="model">schedule.seat.down.meeting</field>
+            <field name="arch" type="xml">
+	            <form string="Schedule Seat Down">
+	            	<header>
+	            		<button name="btn_request_seatdown" string="Request Seatdown" type="object" class="oe_highlight" states="draft"/>
+	            		<button name="btn_confirm_seatdown" string="Confirm Seatdown" type="object" class="oe_highlight" states="draft_reschedule"/>
+	            		<button name="btn_request_seatdown" string="Reschedule Seatdown Date/Time" type="object" class="oe_highlight" states="draft_reschedule"/>
+	            		<button name="btn_cancel_seatdown" string="Cancel Seatdown" type="object" states="draft_request,draft_reschedule"/>
+	            		<field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
+	            	</header>
+	            	<sheet>
+	            		<field name="is_requesting_user" invisible="1"/>
+	            		<field name="is_requested_user" invisible="1"/>
+	            		<table style="width: 100%;">
+	            			<tr>
+	            				<td>
+	            					<label for="user_id" style="font-weight: bold;"/>
+	            				</td>
+	            				<td style="text-align: right;">
+	            					<label for="date_time" style="font-weight: bold;"/>
+	            				</td>
+	            			</tr>
+	            			<tr>
+	            				<td>
+	            					<h2><field name="user_id" domain="[('id','!=',uid),('id','!=',1)]" options="{'no_create': True,'no_open': True}" attrs="{'readonly': [('state','!=','draft')]}"/></h2>
+	            				</td>
+	            				<td style="text-align: right; width: 220px;">
+	            					<h2><field name="date_time" class="h2_date_time" attrs="{'readonly': [('state','not in',['draft','draft_reschedule'])]}"/></h2>
+	            				</td>
+	            			</tr>
+	            		</table>
+	            		<br/><br/>
+	            		<table style="width: 100%;">
+	            			<tr>
+	            				<td style="text-align: center; width: 47%;">
+	            					<label for="request_obs" style="font-weight: bold;"/>
+	            				</td>
+	            				<td style="width: 10px;"></td>
+	            				<td style="text-align: center; width: 47%;">
+	            					<label for="confirm_obs" style="font-weight: bold;"/>
+	            				</td>
+	            			</tr>
+	            			<tr>
+	            				<td>
+	            					<field name="request_obs" attrs="{'readonly': [('state','in',['approved','canceled'])]}"/>
+	            				</td>
+	            				<td></td>
+	            				<td>
+	            					<field name="confirm_obs" readonly="1"/>
+	            				</td>
+	            			</tr>
+	            		</table>
+	            	</sheet>
+	           	</form>
+	        </field>
+	    </record>
+	    
+	    <record id="schedule_seat_down_meeting_request_tree" model="ir.ui.view">
+			<field name="name">schedule.seat.down.meeting.request.tree</field>
+            <field name="model">schedule.seat.down.meeting</field>
+            <field name="arch" type="xml">
+                <tree string="Direct Sales" colors="red:state=='canceled';blue:state in ('draft','draft_reschedule')">
+                	<field name="requesting_user_id" invisible="1"/>
+               		<field name="user_id"/>
+                    <field name="date_time"/>
+                    <field name="confirm_obs"/>
+                    <field name="state"/>
+                </tree>
+           	</field>
+    	</record>
+	    
+	    <record id="schedule_seat_down_meeting_request_action" model="ir.actions.act_window">
+            <field name="name">Schedule Seat Down</field>
+            <field name="res_model">schedule.seat.down.meeting</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('requesting_user_id','=',uid)]</field>
+            <field name="context">{"search_default_new_schedules":1}</field>
+            <field name="search_view_id" ref="schedule_seat_down_meeting_request_filter"/>
+       	</record>
+       	<record id="schedule_seat_down_meeting_request_action_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="schedule_seat_down_meeting_request_tree"/>
+            <field name="act_window_id" ref="schedule_seat_down_meeting_request_action"/>
+        </record>
+        <record id="schedule_seat_down_meeting_request_action_form_view" model="ir.actions.act_window.view">
+        	<field name="view_mode">form</field>
+            <field eval="2" name="sequence"/>
+            <field name="view_id" ref="schedule_seat_down_meeting_request_form"/>
+            <field name="act_window_id" ref="schedule_seat_down_meeting_request_action"/>
+        </record>
+    	
+    	<record id="schedule_seat_down_meeting_confirm_filter" model="ir.ui.view">
+            <field name="name">schedule.seat.down.meeting.confirm.search</field>
+            <field name="model">schedule.seat.down.meeting</field>
+            <field name="arch" type="xml">
+                <search string="Search Seatdown Schedule">
+                    <field name="requesting_user_id"/>
+                    <field name="request_obs"/>
+                    <field name="confirm_obs"/>
+                    <separator/>
+                    <filter name="new_schedules" domain="[('date_time','&gt;',time.strftime('%Y-%m-%d'))]" help="New Schedules"/>
+               </search>
+            </field>
+        </record>
+    	
+    	<record id="schedule_seat_down_meeting_confirm_form" model="ir.ui.view">
+            <field name="name">schedule.seat.down.meeting.request.form</field>
+            <field name="model">schedule.seat.down.meeting</field>
+            <field name="arch" type="xml">
+	            <form string="Confirm Seat Down" create="false">
+	            	<header>
+	            		<button name="btn_confirm_seatdown" string="Confirm Seatdown" type="object" class="oe_highlight" states="draft_request"/>
+	            		<button name="btn_reschedule_seatdown" string="Reschedule Seatdown Date/Time" type="object" class="oe_highlight" states="draft_request"/>
+	            		<button name="btn_cancel_seatdown" string="Cancel Seatdown" type="object" states="draft_request"/>
+	            		<field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
+	            	</header>
+	            	<sheet>
+	            		<table style="width: 100%;">
+	            			<tr>
+	            				<td>
+	            					<label for="requesting_user_id" style="font-weight: bold;"/>
+	            				</td>
+	            				<td style="text-align: right;">
+	            					<label for="date_time" style="font-weight: bold;"/>
+	            				</td>
+	            			</tr>
+	            			<tr>
+	            				<td>
+	            					<h2><field name="requesting_user_id" readonly="1" options="{'no_open': True}"/></h2>
+	            				</td>
+	            				<td style="text-align: right; width: 220px;">
+	            					<h2><field name="date_time" class="h2_date_time" attrs="{'readonly': [('state','!=','draft_request')]}"/></h2>
+	            				</td>
+	            			</tr>
+	            		</table>
+	            		<br/><br/>
+	            		<table style="width: 100%;">
+	            			<tr>
+	            				<td style="text-align: center; width: 47%;">
+	            					<label for="request_obs" style="font-weight: bold;"/>
+	            				</td>
+	            				<td style="width: 10px;"></td>
+	            				<td style="text-align: center; width: 47%;">
+	            					<label for="confirm_obs" style="font-weight: bold;"/>
+	            				</td>
+	            			</tr>
+	            			<tr>
+	            				<td>
+	            					<field name="request_obs" readonly="1"/>
+	            				</td>
+	            				<td></td>
+	            				<td>
+	            					<field name="confirm_obs" attrs="{'readonly': [('state','in',['approved','canceled'])]}"/>
+	            				</td>
+	            			</tr>
+	            		</table>
+	            	</sheet>
+	           	</form>
+	        </field>
+	    </record>
+	    
+	    <record id="schedule_seat_down_meeting_confirm_tree" model="ir.ui.view">
+			<field name="name">schedule.seat.down.meeting.request.tree</field>
+            <field name="model">schedule.seat.down.meeting</field>
+            <field name="arch" type="xml">
+                <tree string="Direct Sales" create="false" colors="blue:state=='draft_request'">
+                	<field name="user_id" invisible="1"/>
+                	<field name="requesting_user_id" />
+                    <field name="date_time"/>
+                    <field name="request_obs"/>
+                    <field name="state"/>
+                </tree>
+           	</field>
+    	</record>
+	    
+	    <record id="schedule_seat_down_meeting_confirm_action" model="ir.actions.act_window">
+            <field name="name">Requesting Seat Down</field>
+            <field name="res_model">schedule.seat.down.meeting</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('user_id','=',uid),('state','not in',['draft','canceled'])]</field>
+            <field name="search_view_id" ref="schedule_seat_down_meeting_confirm_filter"/>
+            <field name="context">{"search_default_new_schedules":1}</field>
+       	</record>
+       	<record id="schedule_seat_down_meeting_confirm_action_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="schedule_seat_down_meeting_confirm_tree"/>
+            <field name="act_window_id" ref="schedule_seat_down_meeting_confirm_action"/>
+        </record>
+        <record id="schedule_seat_down_meeting_confirm_action_form_view" model="ir.actions.act_window.view">
+        	<field name="view_mode">form</field>
+            <field eval="2" name="sequence"/>
+            <field name="view_id" ref="schedule_seat_down_meeting_confirm_form"/>
+            <field name="act_window_id" ref="schedule_seat_down_meeting_confirm_action"/>
+        </record>
+    	
+    	<record id="schedule_seat_down_meeting_calendar" model="ir.ui.view">
+	        <field name="name">schedule.seat.down.meeting.calendar</field>
+	        <field name="model">schedule.seat.down.meeting</field>
+	        <field name="arch" type="xml">
+	            <calendar string="Scheduled Seatdowns" color="requesting_user_id" date_delay="duration" date_start="date_time" mode="week" quick_add="False">
+	                <field name="user_id"/>
+	            </calendar>
+	        </field>
+	    </record>
+	    
+	    <record id="schedule_seat_down_meeting_calendar_action" model="ir.actions.act_window">
+            <field name="name">Scheduled Seatdowns</field>
+            <field name="res_model">schedule.seat.down.meeting</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">calendar,form</field>
+            <field name="domain">['&amp;',('state','=','approved'),'|',('user_id','=',uid),('requesting_user_id','=',uid)]</field>
+       	</record>
+    	
+    	<!-- Direct Sales -->
+    	<record id="direct_sale_form" model="ir.ui.view">
+            <field name="name">direct.sale.form</field>
+            <field name="model">direct.sale</field>
+            <field name="arch" type="xml">
+	            <form string="Direct Sale">
+	            	<field name="all_child_ids" invisible="1" readonly="1"/>
+
+	            	<sheet>
+	            		<table style="width: 100%;">
+	            			<tr>
+	            				<td>
+	            					<label for="employee_id" style="font-weight: bold;"/>
+	            				</td>
+	            				<td style="text-align: right;">
+	            					<label for="date" style="font-weight: bold;"/>
+	            				</td>
+	            			</tr>
+	            			<tr>
+	            				<td>
+	            					<h2><field name="employee_id" options="{'no_create': True}" context="{'employee_child_domain': True}"/></h2>
+	            				</td>
+	            				<td style="text-align: right;">
+	            					<h2><field name="date" class="h2_date"/></h2>
+	            				</td>
+	            			</tr>
+	            		</table>
+	            		<group>
+	            			<field name="objectives"/>
+	            		</group>
+	            		<br/>
+	            		<group col="6">
+	            			<field name="doors"/>
+	            			<field name="people_approached" on_change="onchange_people_approached(people_approached, sales_number)"/>
+	            			<field name="sale_bh"/>
+	            			<field name="sale_apr"/>
+	            			<field name="sale_f1"/>
+	            			<field name="sales_number" on_change="onchange_sales_number(sales_number, people_approached)"/>
+	            			<separator colspan="4"/>
+	            			<field name="efficiency"/>
+	            		</group>
+	            		<group string="Observations" col="1">
+	            			<field name="observations" nolabel="1" placeholder="Observations..."/>
+	            			<field name="street_ids" nolabel="1">
+	            				<tree editable="top">
+	            					<field name="street"/>
+	            					<field name="number"/>
+	            					<field name="floor"/>
+	            					<field name="obs"/>
+	            				</tree>
+	            			</field>
+	            		</group>
+	            		
+	            	</sheet>
+	           	</form>
+	        </field>
+	    </record>
+    	
+    	<record id="direct_sale_tree" model="ir.ui.view">
+			<field name="name">direct.sale.tree</field>
+            <field name="model">direct.sale</field>
+            <field name="arch" type="xml">
+                <tree string="Direct Sales">
+               		<field name="employee_id"/>
+                    <field name="date"/>
+                    <field name="sales_number" sum="Total Sales"/>
+                    <field name="people_approached" sum="Total People Approached"/>
+                </tree>
+           	</field>
+    	</record>
+    	
+    	<record id="direct_sale_calendar" model="ir.ui.view">
+	        <field name="name">direct.sale.calendar</field>
+	        <field name="model">direct.sale</field>
+	        <field name="arch" type="xml">
+	            <calendar string="Daily Sales" color="employee_id" date_start="date" avatar_model="hr.employee" quick_add="False">
+	                <field name="people_approached_view"/>
+	                <field name="sales_number_view"/>
+	                <field name="efficiency_view"/>
+	            </calendar>
+	        </field>
+	    </record>
+    	
+    	<record id="daily_direct_sale_action" model="ir.actions.act_window">
+            <field name="name">Daily Sales</field>
+            <field name="res_model">direct.sale</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">calendar,tree,form</field>
+       	</record>
+    	
+    	<!-- Menus -->
+    	<menuitem id="direct_sales_top_menu" name="Direct Sales" sequence="20" groups="group_direct_sales_distributor"/>
+    	  <menuitem id="direct_sales_base_menu" parent="direct_sales_top_menu" name="Direct Sales" sequence="1"/>
+    	    <menuitem id="daily_sales_menu" parent="direct_sales_base_menu" action="daily_direct_sale_action" sequence="1"/>
+    	  <menuitem id="seat_downs_base_menu" parent="direct_sales_top_menu" name="Seat Downs" sequence="2"/>
+    	    <menuitem id="schedule_seat_down_meeting_calendar_menu" parent="seat_downs_base_menu" action="schedule_seat_down_meeting_calendar_action" sequence="0"/>
+    		<menuitem id="schedule_seat_down_meeting_request_menu" parent="seat_downs_base_menu" action="schedule_seat_down_meeting_request_action" sequence="1"/>
+    		<menuitem id="schedule_seat_down_meeting_confirm_menu" parent="seat_downs_base_menu" action="schedule_seat_down_meeting_confirm_action" sequence="2"/>
+    </data>
+</openerp>

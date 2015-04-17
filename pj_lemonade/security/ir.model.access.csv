@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_direct_sale,direct.sale,model_direct_sale,group_direct_sales_distributor,1,1,1,1
+access_direct_sale_street,direct.sale.street,model_direct_sale_street,group_direct_sales_distributor,1,1,1,1
+access_schedule_seat_down_meeting,schedule.seat.down.meeting,model_schedule_seat_down_meeting,group_direct_sales_distributor,1,1,1,1
+
+access_hr_employee_user,hr.employee user,model_hr_employee,group_direct_sales_distributor,1,1,0,0
+access_hr_team,hr.team,model_hr_team,group_direct_sales_distributor,1,1,1,1

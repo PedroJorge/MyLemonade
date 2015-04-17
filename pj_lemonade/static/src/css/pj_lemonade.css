@@ -1,0 +1,17 @@
+.openerp .h2_date input {
+	width: 130px !important;
+}
+
+.openerp .h2_date_time input {
+	width: 210px !important;
+}
+
+.odoo_support_contact {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.openerp .announcement_bar {
+	display: none !important;
+	visibility: hidden !important;
+}

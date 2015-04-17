@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+		
+		<record id="module_category_direct_sales" model="ir.module.category">
+            <field name="name">Direct Sales</field>
+            <field name="description">Direct Sales</field>
+            <field name="sequence">7</field>
+        </record>
+		
+	    <record id="group_direct_sales_distributor" model="res.groups">
+	        <field name="name">Sales Distributor</field>
+	        <field name="category_id" ref="module_category_direct_sales"/>
+	        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+	        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+	    </record>
+	    
+	    <record id="group_direct_sales_leader" model="res.groups">
+	        <field name="name">Sales Leader</field>
+	        <field name="category_id" ref="module_category_direct_sales"/>
+	        <field name="implied_ids" eval="[(4, ref('group_direct_sales_distributor'))]"/>
+	    </record>
+		
+		<record id="group_direct_sales_assistance_manager" model="res.groups">
+	        <field name="name">Sales Assistance Manager</field>
+	        <field name="category_id" ref="module_category_direct_sales"/>
+	        <field name="implied_ids" eval="[(4, ref('group_direct_sales_leader'))]"/>
+	    </record>
+		
+		<record id="group_direct_sales_manager" model="res.groups">
+	        <field name="name">Sales Manager</field>
+	        <field name="category_id" ref="module_category_direct_sales"/>
+	        <field name="implied_ids" eval="[(4, ref('group_direct_sales_assistance_manager'))]"/>
+	    </record>
+		
+	</data>
+</openerp>	 
