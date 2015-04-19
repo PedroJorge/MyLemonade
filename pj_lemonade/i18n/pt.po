@@ -1,0 +1,627 @@
+﻿# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pj_lemonade
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-18 21:19+0000\n"
+"PO-Revision-Date: 2015-04-18 21:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Active"
+msgstr "Ativo"
+
+#. module: pj_lemonade
+#: field:direct.sale,street_ids:0
+msgid "Addresses"
+msgstr "Moradas"
+
+#. module: pj_lemonade
+#: selection:schedule.seat.down.meeting,state:0
+msgid "Approved"
+msgstr "Aprovado"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Are you sure you want to demote this employee?"
+msgstr "Tem a certeza que deseja despromover este colaborador?"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Are you sure you want to promote this employee?"
+msgstr "Tem a certeza que deseja promover este colaborador?"
+
+#. module: pj_lemonade
+#: selection:hr.employee,job:0
+msgid "Assistance Manager"
+msgstr "Assistente Gerente"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Birth"
+msgstr "Data de Nascimento"
+
+#. module: pj_lemonade
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_confirm_form
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_request_form
+msgid "Cancel Sitdown"
+msgstr "Cancelar Sitdown"
+
+#. module: pj_lemonade
+#: selection:schedule.seat.down.meeting,state:0
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: pj_lemonade
+#: field:direct.sale,all_child_ids:0
+#: field:res.users,all_child_ids:0
+msgid "Child Domain"
+msgstr "Domínio de Descendentes"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Citizenship & Other Info"
+msgstr "Cidadania & Outras Informações"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_filter
+msgid "Coach"
+msgstr "Tutor"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_filter
+msgid "Company"
+msgstr "Empresa"
+
+#. module: pj_lemonade
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_confirm_form
+msgid "Confirm Sitdown"
+msgstr "Confirmar Sitdown"
+
+#. module: pj_lemonade
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_confirm_form
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_request_form
+msgid "Confirm Sitdown"
+msgstr "Confirmar Sitdown"
+
+#. module: pj_lemonade
+#: field:schedule.seat.down.meeting,confirm_obs:0
+msgid "Confirmation Observations"
+msgstr "Observações de Confirmação"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Contact Information"
+msgstr "Informação do Contato"
+
+#. module: pj_lemonade
+#: field:direct.sale,create_uid:0
+#: field:direct.sale.street,create_uid:0
+#: field:hr.team,create_uid:0
+#: field:schedule.seat.down.meeting,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: pj_lemonade
+#: field:direct.sale,create_date:0
+#: field:direct.sale.street,create_date:0
+#: field:hr.team,create_date:0
+#: field:schedule.seat.down.meeting,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: pj_lemonade
+#: view:direct.sale:pj_lemonade.direct_sale_calendar
+#: model:ir.actions.act_window,name:pj_lemonade.daily_direct_sale_action
+#: model:ir.ui.menu,name:pj_lemonade.daily_sales_menu
+msgid "Daily Sales"
+msgstr "Vendas Diárias"
+
+#. module: pj_lemonade
+#: field:direct.sale,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: pj_lemonade
+#: help:direct.sale,message_last_post:0
+#: help:hr.team,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Data da Última mensagem afixada no registro."
+
+#. module: pj_lemonade
+#: field:schedule.seat.down.meeting,date_time:0
+msgid "Date/time"
+msgstr "Data/hora"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Demote"
+msgstr "Despromover"
+
+#. module: pj_lemonade
+#: view:direct.sale:pj_lemonade.direct_sale_form
+#: model:ir.model,name:pj_lemonade.model_direct_sale
+msgid "Direct Sale"
+msgstr "Venadas Diretas"
+
+#. module: pj_lemonade
+#: model:ir.model,name:pj_lemonade.model_direct_sale_street
+msgid "Direct Sale Street"
+msgstr "Moradas de Vendas Diretas"
+
+#. module: pj_lemonade
+#: view:direct.sale:pj_lemonade.direct_sale_tree
+#: model:ir.module.category,description:pj_lemonade.module_category_direct_sales
+#: model:ir.module.category,name:pj_lemonade.module_category_direct_sales
+#: model:ir.ui.menu,name:pj_lemonade.direct_sales_base_menu
+#: model:ir.ui.menu,name:pj_lemonade.direct_sales_top_menu
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_confirm_tree
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_request_tree
+msgid "Direct Sales"
+msgstr "Vendas Diretas"
+
+#. module: pj_lemonade
+#: selection:hr.employee,job:0
+msgid "Distributor"
+msgstr "Destribuidor"
+
+#. module: pj_lemonade
+#: selection:schedule.seat.down.meeting,state:0
+msgid "Draft"
+msgstr "Rascunho"
+
+#. module: pj_lemonade
+#: field:schedule.seat.down.meeting,duration:0
+msgid "Duration"
+msgstr "Duração"
+
+#. module: pj_lemonade
+#: code:addons\pj_lemonade\direct_sales.py:116
+#, python-format
+msgid "Efficiency"
+msgstr "Eficiêcia"
+
+#. module: pj_lemonade
+#: field:direct.sale,efficiency:0
+#: field:direct.sale,efficiency_view:0
+msgid "Efficiency(%)"
+msgstr "Eficiêcia(%)"
+
+#. module: pj_lemonade
+#: field:direct.sale,employee_id:0
+#: view:hr.employee:pj_lemonade.view_employee_form
+#: model:ir.model,name:pj_lemonade.model_hr_employee
+msgid "Employee"
+msgstr "Colaborador"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.hr_employee_tree_view
+#: view:hr.employee:pj_lemonade.view_employee_filter
+#: view:hr.employee:pj_lemonade.view_employee_tree
+#: view:hr.team:pj_lemonade.view_team_filter
+msgid "Employees"
+msgstr "Colaboradores"
+
+#. module: pj_lemonade
+#: field:direct.sale.street,floor:0
+msgid "Floor"
+msgstr "Piso"
+
+#. module: pj_lemonade
+#: field:direct.sale,message_follower_ids:0
+#: field:hr.team,message_follower_ids:0
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_filter
+#: view:hr.team:pj_lemonade.view_team_filter
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "HR Settings"
+msgstr "Definições RH"
+
+#. module: pj_lemonade
+#: help:direct.sale,message_summary:0
+#: help:hr.team,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Detêm o resumo do mensageiro (número de mensagens, ...). Estes resumos encontra-se em formato html para serem inseridos nas vistas kanban."
+
+#. module: pj_lemonade
+#: field:direct.sale,id:0
+#: field:direct.sale.street,id:0
+#: field:hr.team,id:0
+#: field:schedule.seat.down.meeting,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: pj_lemonade
+#: help:direct.sale,message_unread:0
+#: help:hr.team,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Se selecionado, novas mensagens requerem sua atenção."
+
+#. module: pj_lemonade
+#: field:direct.sale,message_is_follower:0
+#: field:hr.team,message_is_follower:0
+msgid "Is a Follower"
+msgstr "É um seguidor"
+
+#. module: pj_lemonade
+#: field:hr.employee,job:0
+msgid "Job"
+msgstr "Cargo"
+
+#. module: pj_lemonade
+#: field:direct.sale,message_last_post:0
+#: field:hr.team,message_last_post:0
+msgid "Last Message Date"
+msgstr "Data da Última Mensagem"
+
+#. module: pj_lemonade
+#: field:direct.sale,write_uid:0
+#: field:direct.sale.street,write_uid:0
+#: field:hr.team,write_uid:0
+#: field:schedule.seat.down.meeting,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: pj_lemonade
+#: field:direct.sale,write_date:0
+#: field:direct.sale.street,write_date:0
+#: field:hr.team,write_date:0
+#: field:schedule.seat.down.meeting,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: pj_lemonade
+#: selection:hr.employee,job:0
+msgid "Leader"
+msgstr "Líder"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_filter
+#: selection:hr.employee,job:0
+msgid "Manager"
+msgstr "Líder Direto"
+
+#. module: pj_lemonade
+#: field:hr.team,image_medium:0
+msgid "Medium-sized image"
+msgstr "Imagem Média"
+
+#. module: pj_lemonade
+#: view:hr.team:pj_lemonade.view_team_filter
+msgid "Member"
+msgstr "Membro"
+
+#. module: pj_lemonade
+#: field:direct.sale,message_ids:0
+#: field:hr.team,message_ids:0
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: pj_lemonade
+#: help:direct.sale,message_ids:0
+#: help:hr.team,message_ids:0
+msgid "Messages and communication history"
+msgstr "Mensagens e histórico de comunicações"
+
+#. module: pj_lemonade
+#: field:hr.team,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pj_lemonade
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_confirm_filter
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_request_filter
+msgid "New Schedules"
+msgstr "Novos Agendamentos"
+
+#. module: pj_lemonade
+#: field:direct.sale.street,number:0
+msgid "Number"
+msgstr "Número"
+
+#. module: pj_lemonade
+#: view:direct.sale:pj_lemonade.direct_sale_tree
+msgid "Total People Approached"
+msgstr "Nº de Pessoas"
+
+#. module: pj_lemonade
+#: field:direct.sale,sale_apr:0
+msgid "Nº of Apr"
+msgstr "Nº de Apr"
+
+#. module: pj_lemonade
+#: field:direct.sale,sale_bh:0
+msgid "Nº of BH"
+msgstr "Nº de BH"
+
+#. module: pj_lemonade
+#: field:direct.sale,doors:0
+msgid "Nº of Doors"
+msgstr "Nº de Portas"
+
+#. module: pj_lemonade
+#: field:direct.sale,sale_f1:0
+msgid "Nº of F1"
+msgstr "Nº de F1"
+
+#. module: pj_lemonade
+#: field:direct.sale,sales_number:0
+msgid "Nº of F2"
+msgstr "Nº de F2"
+
+#. module: pj_lemonade
+#: field:direct.sale,people_approached:0
+msgid "Nº of People"
+msgstr "Nº de Pessoas"
+
+#. module: pj_lemonade
+#: field:direct.sale,objectives:0
+msgid "Objectives"
+msgstr "Objetivos"
+
+#. module: pj_lemonade
+#: view:direct.sale:pj_lemonade.direct_sale_form
+#: field:direct.sale,observations:0
+#: field:direct.sale.street,obs:0
+msgid "Observations"
+msgstr "Observações"
+
+#. module: pj_lemonade
+#: view:direct.sale:pj_lemonade.direct_sale_form
+msgid "Observations..."
+msgstr "Observações..."
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Other Information ..."
+msgstr "Outras Informações ..."
+
+#. module: pj_lemonade
+#: code:addons\pj_lemonade\direct_sales.py:114
+#, python-format
+msgid "People"
+msgstr "Pessoas"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Personal Information"
+msgstr "Informação Pessoal"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Position"
+msgstr "Posto"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Promote"
+msgstr "Promover"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Public Information"
+msgstr "Informação pública"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.hr_hr_employee_view_form
+msgid "Received Badges"
+msgstr "Recebeu Distintivos"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Related User"
+msgstr "Utilizador Relacionado"
+
+#. module: pj_lemonade
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_request_form
+msgid "Request Sitdown"
+msgstr "Solicitar Sitdown"
+
+#. module: pj_lemonade
+#: field:schedule.seat.down.meeting,request_obs:0
+msgid "Requesting Observations"
+msgstr "Observações de Solicitante"
+
+#. module: pj_lemonade
+#: model:ir.actions.act_window,name:pj_lemonade.schedule_seat_down_meeting_confirm_action
+#: model:ir.ui.menu,name:pj_lemonade.schedule_seat_down_meeting_confirm_menu
+#: field:schedule.seat.down.meeting,requesting_user_id:0
+msgid "Requesting Sitdown"
+msgstr "A Solicitar Sitdown"
+
+#. module: pj_lemonade
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_confirm_form
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_request_form
+msgid "Reschedule Sitdown Date/Time"
+msgstr "Reagendar SitDown Data/Hora"
+
+#. module: pj_lemonade
+#: field:direct.sale.street,direct_sale_id:0
+msgid "Sale"
+msgstr "Venda"
+
+#. module: pj_lemonade
+#: code:addons\pj_lemonade\direct_sales.py:115
+#, python-format
+msgid "Sales"
+msgstr "Vendas"
+
+#. module: pj_lemonade
+#: model:res.groups,name:pj_lemonade.group_direct_sales_assistance_manager
+msgid "Sales Assistance Manager"
+msgstr "Vendas - Assistente Gerente"
+
+#. module: pj_lemonade
+#: model:res.groups,name:pj_lemonade.group_direct_sales_distributor
+msgid "Sales Distributor"
+msgstr "Vendas - Destribuidor"
+
+#. module: pj_lemonade
+#: model:res.groups,name:pj_lemonade.group_direct_sales_leader
+msgid "Sales Leader"
+msgstr "Vendas - Líder"
+
+#. module: pj_lemonade
+#: model:res.groups,name:pj_lemonade.group_direct_sales_manager
+msgid "Sales Manager"
+msgstr "Vendas - Gerente"
+
+#. module: pj_lemonade
+#: model:ir.actions.act_window,name:pj_lemonade.schedule_seat_down_meeting_request_action
+#: model:ir.ui.menu,name:pj_lemonade.schedule_seat_down_meeting_request_menu
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_request_form
+msgid "Schedule Sitdown"
+msgstr "Agendar Sitdown"
+
+#. module: pj_lemonade
+#: model:ir.actions.act_window,name:pj_lemonade.schedule_seat_down_meeting_calendar_action
+#: model:ir.ui.menu,name:pj_lemonade.schedule_seat_down_meeting_calendar_menu
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_calendar
+msgid "Scheduled Sitdowns"
+msgstr "Sitdowns Agendados"
+
+#. module: pj_lemonade
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_confirm_filter
+#: view:schedule.seat.down.meeting:pj_lemonade.schedule_seat_down_meeting_request_filter
+msgid "Search Sitdown Schedule"
+msgstr "Filtro de Agenda de Sitdown"
+
+#. module: pj_lemonade
+#: model:ir.model,name:pj_lemonade.model_schedule_seat_down_meeting
+msgid "Sitdown Meeting Schedule"
+msgstr "Agenda de Sitdown"
+
+#. module: pj_lemonade
+#: field:schedule.seat.down.meeting,user_id:0
+msgid "Sitdown With"
+msgstr "Sitdown Com"
+
+#. module: pj_lemonade
+#: model:ir.ui.menu,name:pj_lemonade.seat_downs_base_menu
+msgid "Sitdowns"
+msgstr "Sitdowns"
+
+#. module: pj_lemonade
+#: field:hr.team,image_small:0
+msgid "Small-sized photo"
+msgstr "Imagem Pequena"
+
+#. module: pj_lemonade
+#: field:schedule.seat.down.meeting,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "Status"
+msgstr "Estado"
+
+#. module: pj_lemonade
+#: field:direct.sale.street,street:0
+msgid "Street"
+msgstr "Rua"
+
+#. module: pj_lemonade
+#: field:direct.sale,message_summary:0
+#: field:hr.team,message_summary:0
+msgid "Summary"
+msgstr "Sumário"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_filter
+#: field:hr.employee,team_id:0
+#: view:hr.team:pj_lemonade.view_team_form
+#: model:ir.model,name:pj_lemonade.model_hr_team
+msgid "Team"
+msgstr "Equipa"
+
+#. module: pj_lemonade
+#: field:hr.team,image:0
+msgid "Team Image"
+msgstr "Imagem da Equipa"
+
+#. module: pj_lemonade
+#: view:hr.team:pj_lemonade.view_team_filter
+#: view:hr.team:pj_lemonade.view_team_kanban
+#: field:hr.team,employee_id:0
+msgid "Team Leader"
+msgstr "Líder da Equipa"
+
+#. module: pj_lemonade
+#: field:hr.team,employee_ids:0
+msgid "Team Members"
+msgstr "Membros da Equipa"
+
+#. module: pj_lemonade
+#: view:hr.team:pj_lemonade.view_team_filter
+msgid "Team Name"
+msgstr "Nome da Equipa"
+
+#. module: pj_lemonade
+#: view:hr.team:pj_lemonade.view_team_tree
+#: model:ir.actions.act_window,name:pj_lemonade.hr_team_action
+#: model:ir.ui.menu,name:pj_lemonade.hr_team_menu
+msgid "Teams"
+msgstr "Equipas"
+
+#. module: pj_lemonade
+#: view:direct.sale:pj_lemonade.direct_sale_tree
+msgid "Total Sales"
+msgstr "Total de Vendas"
+
+#. module: pj_lemonade
+#: field:direct.sale,message_unread:0
+#: field:hr.team,message_unread:0
+msgid "Unread Messages"
+msgstr "Mensagens não Lidas"
+
+#. module: pj_lemonade
+#: model:ir.model,name:pj_lemonade.model_res_users
+msgid "Users"
+msgstr "Utilizadores"
+
+#. module: pj_lemonade
+#: selection:schedule.seat.down.meeting,state:0
+msgid "Waiting Approval"
+msgstr "Pendente Aprovação"
+
+#. module: pj_lemonade
+#: sql_constraint:direct.sale:0
+msgid "You can only create a direct sale for each day once per employee!"
+msgstr "Apenas pode criar uma venda direta por dia e por utilizador!"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_filter
+#: model:ir.actions.act_window,name:pj_lemonade.hr_employee_tree_action
+#: model:ir.ui.menu,name:pj_lemonade.hr_emplyee_tree_menu
+msgid "Your Team"
+msgstr "A Tua Equipa"
+
+#. module: pj_lemonade
+#: view:hr.employee:pj_lemonade.view_employee_form
+msgid "e.g. Part Time"
+msgstr "por ex.: Part Time"
+
+#. module: pj_lemonade
+#: field:direct.sale,people_approached_view:0
+#: field:direct.sale,sales_number_view:0
+#: field:schedule.seat.down.meeting,is_requested_user:0
+#: field:schedule.seat.down.meeting,is_requesting_user:0
+msgid "unknown"
+msgstr "desconhecido"

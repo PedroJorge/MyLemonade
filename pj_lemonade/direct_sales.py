@@ -26,7 +26,7 @@ import time
 
 class schedule_seat_down_meeting(osv.osv):
     _name = "schedule.seat.down.meeting"
-    _description = "Seat Down Meeting Schedule"
+    _description = "Sitdown Meeting Schedule"
     _inherit = ['ir.needaction_mixin']
     _order = 'date_time DESC'
     _rec_name = 'date_time'
@@ -42,8 +42,8 @@ class schedule_seat_down_meeting(osv.osv):
     
     _columns = {
                 'date_time': fields.datetime('Date/time', required=True),
-                'user_id': fields.many2one('res.users', 'Seat Down With', required=True, ondelete='cascade'),
-                'requesting_user_id': fields.many2one('res.users', 'Requesting Seat Down', required=True, readonly=True, ondelete='cascade'),
+                'user_id': fields.many2one('res.users', 'Sitdown With', required=True, ondelete='cascade'),
+                'requesting_user_id': fields.many2one('res.users', 'Requesting Sitdown', required=True, readonly=True, ondelete='cascade'),
                 'request_obs': fields.text('Requesting Observations'),
                 'confirm_obs': fields.text('Confirmation Observations'),
                 'state': fields.selection([('draft','Draft'),('draft_request', 'Waiting Approval'), ('draft_reschedule', 'Waiting Approval'), ('approved', 'Approved'), ('canceled', 'Canceled')], 'State', required=True),   

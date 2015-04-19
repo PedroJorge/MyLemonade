@@ -8,12 +8,12 @@
             </xpath>
         </template>
     	
-    	<!-- Seat Downs Schedule -->
+    	<!-- Sitdowns Schedule -->
     	<record id="schedule_seat_down_meeting_request_filter" model="ir.ui.view">
             <field name="name">schedule.seat.down.meeting.request.search</field>
             <field name="model">schedule.seat.down.meeting</field>
             <field name="arch" type="xml">
-                <search string="Search Seatdown Schedule">
+                <search string="Search Sitdown Schedule">
                     <field name="user_id"/>
                     <field name="request_obs"/>
                     <field name="confirm_obs"/>
@@ -27,12 +27,12 @@
             <field name="name">schedule.seat.down.meeting.request.form</field>
             <field name="model">schedule.seat.down.meeting</field>
             <field name="arch" type="xml">
-	            <form string="Schedule Seat Down">
+	            <form string="Schedule Sitdown">
 	            	<header>
-	            		<button name="btn_request_seatdown" string="Request Seatdown" type="object" class="oe_highlight" states="draft"/>
-	            		<button name="btn_confirm_seatdown" string="Confirm Seatdown" type="object" class="oe_highlight" states="draft_reschedule"/>
-	            		<button name="btn_request_seatdown" string="Reschedule Seatdown Date/Time" type="object" class="oe_highlight" states="draft_reschedule"/>
-	            		<button name="btn_cancel_seatdown" string="Cancel Seatdown" type="object" states="draft_request,draft_reschedule"/>
+	            		<button name="btn_request_seatdown" string="Request Sitdown" type="object" class="oe_highlight" states="draft"/>
+	            		<button name="btn_confirm_seatdown" string="Confirm Sitdown" type="object" class="oe_highlight" states="draft_reschedule"/>
+	            		<button name="btn_request_seatdown" string="Reschedule Sitdown Date/Time" type="object" class="oe_highlight" states="draft_reschedule"/>
+	            		<button name="btn_cancel_seatdown" string="Cancel Sitdown" type="object" states="draft_request,draft_reschedule"/>
 	            		<field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
 	            	</header>
 	            	<sheet>
@@ -97,7 +97,7 @@
     	</record>
 	    
 	    <record id="schedule_seat_down_meeting_request_action" model="ir.actions.act_window">
-            <field name="name">Schedule Seat Down</field>
+            <field name="name">Schedule Sitdown</field>
             <field name="res_model">schedule.seat.down.meeting</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -122,7 +122,7 @@
             <field name="name">schedule.seat.down.meeting.confirm.search</field>
             <field name="model">schedule.seat.down.meeting</field>
             <field name="arch" type="xml">
-                <search string="Search Seatdown Schedule">
+                <search string="Search Sitdown Schedule">
                     <field name="requesting_user_id"/>
                     <field name="request_obs"/>
                     <field name="confirm_obs"/>
@@ -136,11 +136,11 @@
             <field name="name">schedule.seat.down.meeting.request.form</field>
             <field name="model">schedule.seat.down.meeting</field>
             <field name="arch" type="xml">
-	            <form string="Confirm Seat Down" create="false">
+	            <form string="Confirm Sitdown" create="false">
 	            	<header>
-	            		<button name="btn_confirm_seatdown" string="Confirm Seatdown" type="object" class="oe_highlight" states="draft_request"/>
-	            		<button name="btn_reschedule_seatdown" string="Reschedule Seatdown Date/Time" type="object" class="oe_highlight" states="draft_request"/>
-	            		<button name="btn_cancel_seatdown" string="Cancel Seatdown" type="object" states="draft_request"/>
+	            		<button name="btn_confirm_seatdown" string="Confirm Sitdown" type="object" class="oe_highlight" states="draft_request"/>
+	            		<button name="btn_reschedule_seatdown" string="Reschedule Sitdown Date/Time" type="object" class="oe_highlight" states="draft_request"/>
+	            		<button name="btn_cancel_seatdown" string="Cancel Sitdown" type="object" states="draft_request"/>
 	            		<field name="state" widget="statusbar" statusbar_visible="draft,approved"/>
 	            	</header>
 	            	<sheet>
@@ -203,7 +203,7 @@
     	</record>
 	    
 	    <record id="schedule_seat_down_meeting_confirm_action" model="ir.actions.act_window">
-            <field name="name">Requesting Seat Down</field>
+            <field name="name">Requesting Sitdown</field>
             <field name="res_model">schedule.seat.down.meeting</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -228,14 +228,14 @@
 	        <field name="name">schedule.seat.down.meeting.calendar</field>
 	        <field name="model">schedule.seat.down.meeting</field>
 	        <field name="arch" type="xml">
-	            <calendar string="Scheduled Seatdowns" color="requesting_user_id" date_delay="duration" date_start="date_time" mode="week" quick_add="False">
+	            <calendar string="Scheduled Sitdowns" color="requesting_user_id" date_delay="duration" date_start="date_time" mode="week" quick_add="False">
 	                <field name="user_id"/>
 	            </calendar>
 	        </field>
 	    </record>
 	    
 	    <record id="schedule_seat_down_meeting_calendar_action" model="ir.actions.act_window">
-            <field name="name">Scheduled Seatdowns</field>
+            <field name="name">Scheduled Sitdowns</field>
             <field name="res_model">schedule.seat.down.meeting</field>
             <field name="view_type">form</field>
             <field name="view_mode">calendar,form</field>
@@ -336,7 +336,7 @@
     	<menuitem id="direct_sales_top_menu" name="Direct Sales" sequence="20" groups="group_direct_sales_distributor"/>
     	  <menuitem id="direct_sales_base_menu" parent="direct_sales_top_menu" name="Direct Sales" sequence="1"/>
     	    <menuitem id="daily_sales_menu" parent="direct_sales_base_menu" action="daily_direct_sale_action" sequence="1"/>
-    	  <menuitem id="seat_downs_base_menu" parent="direct_sales_top_menu" name="Seat Downs" sequence="2"/>
+    	  <menuitem id="seat_downs_base_menu" parent="direct_sales_top_menu" name="Sitdowns" sequence="2"/>
     	    <menuitem id="schedule_seat_down_meeting_calendar_menu" parent="seat_downs_base_menu" action="schedule_seat_down_meeting_calendar_action" sequence="0"/>
     		<menuitem id="schedule_seat_down_meeting_request_menu" parent="seat_downs_base_menu" action="schedule_seat_down_meeting_request_action" sequence="1"/>
     		<menuitem id="schedule_seat_down_meeting_confirm_menu" parent="seat_downs_base_menu" action="schedule_seat_down_meeting_confirm_action" sequence="2"/>
