@@ -90,6 +90,13 @@ class hr_employee(osv.osv):
         
         return employee_id
     
+    def write(self, cr, uid, ids, vals, context=None):
+        if 'image' in vals:
+            user_ids = [ emp_vals['user_id'][0] for emp_vals in self.read(cr, uid, ids, ['user_id'], context=context) if emp_vals['user_id'] ]
+            if user_ids:
+                self.pool.get('res.users').write(cr, uid, user_ids, {'image': vals['image']}, context=context)
+        return super(hr_employee, self).write(cr, uid, ids, vals, context)
+    
     def __get_users_child_of(self, cr, uid, context=None):
         if uid == SUPERUSER_ID:
             return self.search(cr, uid, [], context=context)

@@ -295,7 +295,7 @@ msgstr "Líder"
 #: view:hr.employee:pj_lemonade.view_employee_filter
 #: selection:hr.employee,job:0
 msgid "Manager"
-msgstr "Líder Direto"
+msgstr "Gerente"
 
 #. module: pj_lemonade
 #: field:hr.team,image_medium:0
